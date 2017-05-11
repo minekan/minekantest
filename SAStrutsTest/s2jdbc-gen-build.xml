@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<project name="SAStrutsTest">
+	<target name="init">
+		<property name="version" value="latest" />
+		<property name="classpathdir" value="target/classes" />
+		<property name="rootpackagename" value="sample.sastruts.test" />
+		<property name="entitypackagename" value="entity" />
+		<property name="namespackagename" value="names" />
+		<property name="servicepackagename" value="service" />
+		<property name="javafiledestdir" value="src/main/java" />
+		<property name="testjavafiledestdir" value="src/test/java" />
+		<property name="javafileencoding" value="UTF-8" />
+		<property name="env" value="ut" />
+		<property name="jdbcmanagername" value="jdbcManager" />
+		<taskdef resource="s2jdbc-gen-task.properties" classpathref="maven.runtime.classpath">
+		</taskdef>
+	</target>
+	<target name="gen-entity" depends="init">
+		<gen-entity rootpackagename="${rootpackagename}"
+			entitypackagename="${entitypackagename}"
+			javafiledestdir="${javafiledestdir}"
+			javafileencoding="${javafileencoding}"
+			env="${env}"
+			jdbcmanagername="${jdbcmanagername}"
+			classpathref="maven.runtime.classpath">
+		</gen-entity>
+	</target>
+	<target name="gen-names" depends="init">
+		<gen-names classpathdir="${classpathdir}"
+			rootpackagename="${rootpackagename}"
+			entitypackagename="${entitypackagename}"
+			namesPackageName="${namespackagename}"
+			javafiledestdir="${javafiledestdir}"
+			javafileencoding="${javafileencoding}"
+			env="${env}"
+			jdbcmanagername="${jdbcmanagername}"
+			classpathref="maven.runtime.classpath" />
+	</target>
+	<target name="gen-service" depends="init">
+		<gen-service classpathdir="${classpathdir}"
+			rootpackagename="${rootpackagename}"
+			entitypackagename="${entitypackagename}"
+			namesPackageName="${namespackagename}"
+			servicePackageName="${servicepackagename}"
+			javafiledestdir="${javafiledestdir}"
+			javafileencoding="${javafileencoding}"
+			env="${env}"
+			jdbcmanagername="${jdbcmanagername}"
+			classpathref="maven.runtime.classpath" />
+	</target>
+	<target name="gen-ddl" depends="init">
+		<gen-ddl classpathdir="${classpathdir}"
+			rootpackagename="${rootpackagename}"
+			entitypackagename="${entitypackagename}"
+			env="${env}"
+			jdbcmanagername="${jdbcmanagername}"
+			classpathref="maven.runtime.classpath" />
+	</target>
+	<target name="migrate" depends="init">
+		<migrate classpathdir="${classpathdir}"
+			rootpackagename="${rootpackagename}"
+			entitypackagename="${entitypackagename}"
+			applyenvtoversion="${applyenvtoversion}"
+			version="${version}" env="${env}"
+			jdbcmanagername="${jdbcmanagername}"
+			classpathref="maven.runtime.classpath" />
+	</target>
+	<target name="rollback" depends="init">
+		<migrate classpathdir="${classpathdir}"
+			rootpackagename="${rootpackagename}"
+			entitypackagename="${entitypackagename}"
+			applyenvtoversion="${applyenvtoversion}"
+			version="previous" env="${env}"
+			jdbcmanagername="${jdbcmanagername}"
+			classpathref="maven.runtime.classpath" />
+	</target>
+</project>

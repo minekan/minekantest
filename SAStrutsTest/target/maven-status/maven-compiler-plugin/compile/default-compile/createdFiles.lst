@@ -1,0 +1,9 @@
+sample\sastruts\test\service\AbstractService.class
+sample\sastruts\test\action\FormTestAction.class
+sample\sastruts\test\form\FormTestForm.class
+sample\sastruts\test\service\TestTableService.class
+sample\sastruts\test\names\TestTableNames$_TestTableNames.class
+sample\sastruts\test\names\TestTableNames.class
+sample\sastruts\test\entity\TestTable.class
+sample\sastruts\test\names\Names.class
+sample\sastruts\test\action\IndexAction.class
