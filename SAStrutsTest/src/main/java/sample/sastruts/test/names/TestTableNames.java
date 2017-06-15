@@ -8,7 +8,7 @@ import sample.sastruts.test.entity.TestTable;
  * {@link TestTable}のプロパティ名の集合です。
  * 
  */
-@Generated(value = {"S2JDBC-Gen 2.4.40", "org.seasar.extension.jdbc.gen.internal.model.NamesModelFactoryImpl"}, date = "2017/04/20 3:11:07")
+@Generated(value = {"S2JDBC-Gen 2.4.40", "org.seasar.extension.jdbc.gen.internal.model.NamesModelFactoryImpl"}, date = "2017/06/15 22:18:02")
 public class TestTableNames {
 
     /**
